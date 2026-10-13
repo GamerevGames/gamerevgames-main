@@ -538,3 +538,31 @@ footer p { margin: 0; }
 @media (max-width: 700px) {
   .page-head { padding: 72px 0 60px; }
 }
+
+/* =====================================================================
+   404 PAGE
+   Paste at the very END of style.css in the gamerevgames-main repo.
+   ===================================================================== */
+.err-page {
+  text-align: center;
+  padding: 110px 0 130px;
+  background:
+    radial-gradient(700px 320px at 50% 0%, rgba(224, 51, 79, 0.2), transparent 70%),
+    var(--bg);
+}
+.err-code {
+  margin: 0; font-weight: 800; line-height: 1;
+  font-size: clamp(6rem, 24vw, 13rem);
+  letter-spacing: -0.04em;
+  color: var(--accent);
+  text-shadow: 0 0 60px rgba(224, 51, 79, 0.35);
+}
+.err-title {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 800; text-transform: uppercase;
+  margin: 8px 0 16px;
+}
+.err-title em { font-style: normal; color: var(--accent); }
+.err-page .s-copy { margin: 0 auto 28px; }
+.err-page .btns { justify-content: center; }
+@media (max-width: 700px) { .err-page { padding: 72px 0 90px; } }
