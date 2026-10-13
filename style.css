@@ -473,3 +473,38 @@ footer p { margin: 0; }
   .nav ul { gap: 14px; flex-wrap: wrap; }
   .nav ul a { font-size: 0.88rem; }
 }
+
+/* =====================================================================
+   INNER PAGE STYLES (Games page, and reusable for Studio, Media, Jobs, Contact)
+   Paste this at the very END of style.css in the gamerevgames-main repo,
+   below the studio styles you added earlier.
+   ===================================================================== */
+
+/* ---------- Page header strip ---------- */
+.page-head {
+  padding: 72px 0 44px;
+  background:
+    radial-gradient(900px 340px at 85% -30%, rgba(224, 51, 79, 0.18), transparent 60%),
+    var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.page-head h1 {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  font-weight: 800; line-height: 1.05;
+  text-transform: uppercase; letter-spacing: 0.01em;
+  margin: 0 0 14px;
+}
+.page-head h1 em { font-style: normal; color: var(--accent); }
+
+/* ---------- Grouped game lists ---------- */
+.game-group + .game-group { margin-top: 56px; }
+.group-title {
+  font-size: 1.15rem; font-weight: 700;
+  margin: 0 0 20px; padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.game-body .tags { margin: 0 0 12px; }
+
+@media (max-width: 700px) {
+  .page-head { padding: 48px 0 32px; }
+}
