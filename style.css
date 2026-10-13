@@ -480,21 +480,51 @@ footer p { margin: 0; }
    below the studio styles you added earlier.
    ===================================================================== */
 
-/* ---------- Page header strip ---------- */
+/* ---------- Page header strip (looping video background) ----------
+   The header can hold a muted, looping MP4 that behaves like a GIF.
+   In the HTML, the video goes inside .page-head, before the .wrap:
+     <video class="head-bg" autoplay loop muted playsinline preload="metadata"
+            poster="/images/games-header-poster.jpg" aria-hidden="true">
+       <source src="/images/games-header.mp4" type="video/mp4">
+     </video>
+   Remove the <video> and you get a plain dark header with a red glow.
+   Two things sit on top of the video:
+     1. a left-to-right dark gradient (keeps the title readable)
+     2. a bottom fade into the page color (blends the header into the next section)
+   To show more of the video, lower the first two numbers (0.85 / 0.45) in layer 1. */
 .page-head {
-  padding: 72px 0 44px;
+  position: relative; overflow: hidden;
+  padding: 110px 0 90px;
   background:
     radial-gradient(900px 340px at 85% -30%, rgba(224, 51, 79, 0.18), transparent 60%),
     var(--bg);
-  border-bottom: 1px solid var(--border);
 }
+.page-head .head-bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  z-index: 0; pointer-events: none;
+}
+.page-head::after {            /* the dark gradient + bottom fade */
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(15, 17, 23, 0.85) 0%, rgba(15, 17, 23, 0.45) 55%, rgba(15, 17, 23, 0.1) 100%),
+    linear-gradient(0deg, var(--bg) 0, var(--bg) 2px, rgba(15, 17, 23, 0) 65%);
+}
+.page-head .wrap { position: relative; z-index: 2; }
 .page-head h1 {
   font-size: clamp(2.2rem, 6vw, 3.6rem);
   font-weight: 800; line-height: 1.05;
   text-transform: uppercase; letter-spacing: 0.01em;
   margin: 0 0 14px;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
 }
 .page-head h1 em { font-style: normal; color: var(--accent); }
+.page-head .s-copy { color: #c9ceda; text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6); }
+/* pull the first section up so the fade flows straight into it */
+.page-head + .s-section { padding-top: 24px; }
+/* people who ask their device to reduce motion get the still poster instead */
+@media (prefers-reduced-motion: reduce) { .page-head .head-bg { display: none; } }
 
 /* ---------- Grouped game lists ---------- */
 .game-group + .game-group { margin-top: 56px; }
@@ -506,5 +536,5 @@ footer p { margin: 0; }
 .game-body .tags { margin: 0 0 12px; }
 
 @media (max-width: 700px) {
-  .page-head { padding: 48px 0 32px; }
+  .page-head { padding: 72px 0 60px; }
 }
