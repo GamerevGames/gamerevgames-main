@@ -596,6 +596,20 @@ footer p { margin: 0; }
   .feature-icon { grid-row: 1 / span 2; margin: 0; }
 }
 
+/* ---------- Image band: a normal section with a picture behind it ---------- */
+.image-band { position: relative; overflow: hidden; padding: 120px 0; margin: -1px 0; z-index: 1; }
+.image-band::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(15, 17, 23, 0.85) 0%, rgba(15, 17, 23, 0.45) 55%, rgba(15, 17, 23, 0.1) 100%),
+    linear-gradient(0deg, var(--bg-alt) 0, rgba(18, 21, 29, 0) 35%),
+    linear-gradient(180deg, var(--bg-alt) 0, rgba(18, 21, 29, 0) 35%);
+}
+.image-band > .wrap { position: relative; z-index: 2; }
+.image-band .s-title, .image-band .s-copy { text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6); }
+.image-band .s-copy { color: #c9ceda; }
+@media (max-width: 700px) { .image-band { padding: 80px 0; } }
+
 /* =====================================================================
    404 PAGE
    Paste at the very END of style.css in the gamerevgames-main repo.
