@@ -610,6 +610,66 @@ footer p { margin: 0; }
 .image-band .s-copy { color: #c9ceda; }
 @media (max-width: 700px) { .image-band { padding: 80px 0; } }
 
+/* ---------- JOBS PAGE ---------- */
+.notice {
+  max-width: 860px; padding: 26px 28px;
+  background: var(--panel);
+  border: 1px solid var(--border); border-left: 4px solid var(--accent);
+  border-radius: 16px;
+}
+.notice h2 { margin: 0 0 10px; font-size: 1.25rem; }
+.notice p { margin: 0; color: #c9ceda; }
+.notice p + p { margin-top: 10px; }
+.notice strong { color: var(--text); }
+
+.feature-icon b { color: var(--accent-hover); font-size: 1.5rem; font-weight: 800; }
+
+.role-chips { margin-top: 24px; }
+.role-chips li { font-size: 0.95rem; padding: 6px 16px; }
+.role-note { margin-top: 22px; }
+.form-intro { margin-bottom: 28px; }
+
+.apply-form {
+  max-width: 760px; padding: 32px;
+  background: var(--panel);
+  border: 1px solid var(--border); border-radius: 16px;
+  color-scheme: dark;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.field label { font-weight: 600; font-size: 0.95rem; }
+.req { color: var(--accent-hover); }
+.hint { color: var(--muted); font-weight: 400; font-size: 0.85rem; }
+.field input, .field select, .field textarea {
+  width: 100%; font: inherit; color: var(--text);
+  background: #0b0d12; border: 1px solid var(--border); border-radius: 10px;
+  padding: 12px 14px; transition: border-color .15s, box-shadow .15s;
+}
+.field textarea { min-height: 150px; resize: vertical; }
+.field input::placeholder, .field textarea::placeholder { color: #5d6478; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(224, 51, 79, 0.2);
+}
+.check {
+  display: flex; gap: 12px; align-items: flex-start;
+  margin: 6px 0 22px; padding: 14px 16px;
+  background: rgba(224, 51, 79, 0.08); border: 1px solid rgba(224, 51, 79, 0.3); border-radius: 12px;
+}
+.check input { width: 20px; height: 20px; margin-top: 3px; flex-shrink: 0; accent-color: var(--accent); }
+.check label { font-size: 0.95rem; }
+.hp { display: none; }
+.apply-form button.btn { font: inherit; font-weight: 600; cursor: pointer; }
+.apply-form button.btn:disabled { opacity: 0.6; cursor: default; transform: none; }
+.form-status { display: none; margin-top: 16px; padding: 12px 16px; border-radius: 10px; }
+.form-status.ok { display: block; background: rgba(60, 180, 110, 0.12); border: 1px solid rgba(60, 180, 110, 0.4); }
+.form-status.error { display: block; background: rgba(224, 51, 79, 0.12); border: 1px solid rgba(224, 51, 79, 0.45); }
+.form-note { margin: 18px 0 0; color: var(--muted); font-size: 0.85rem; }
+
+@media (max-width: 700px) {
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+  .apply-form { padding: 22px; }
+}
+
 /* =====================================================================
    404 PAGE
    Paste at the very END of style.css in the gamerevgames-main repo.
