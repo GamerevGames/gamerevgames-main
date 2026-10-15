@@ -122,32 +122,48 @@
   <!-- ============ NEWS ============ -->
   <section class="s-section" id="news">
     <div class="wrap">
-      <h2 class="s-title"><em>Gamerev</em> news</h2>
+      <h2 class="s-title"><em>Frontline</em> updates</h2>
 
-      <div class="news-grid">
+      <!-- NEWS CAROUSEL: newest first. To add a post, copy an article and paste it at the TOP of the track -->
+      <div class="carousel" data-carousel>
+        <div class="carousel-track" role="region" aria-label="Latest news">
 
-        <article class="news-card">
-          <a class="game-media" href="/krimson-kore/" tabindex="-1" aria-hidden="true">
-            <img src="/images/krimson_kore_title.png" alt="" loading="lazy" width="1280" height="720">
-          </a>
-          <div class="news-body">
-            <time datetime="2025-11">November 2025</time>
-            <p>Gamerev Games is underway with a new action souls-like adventure: Krimson Kore!</p>
-            <a class="more" href="/krimson-kore/">Learn more</a>
-          </div>
-        </article>
+          <article class="news-card">
+            <a class="game-media" href="/insurance-fraud/" tabindex="-1" aria-hidden="true">
+              <img src="/images/insurance-fraud-thumbnail.png" alt="" loading="lazy" width="1280" height="720">
+            </a>
+            <div class="news-body">
+              <time datetime="2025-11">September 2026</time>
+              <p>Gamerev Games is underway with a new comedy physics title, Insurance Fraud!</p>
+              <a class="more" href="/insurance-fraud/">Learn more</a>
+            </div>
+          </article>
+          
+          <article class="news-card">
+            <a class="game-media" href="/krimson-kore/" tabindex="-1" aria-hidden="true">
+              <img src="/images/krimson_kore_title.png" alt="" loading="lazy" width="1280" height="720">
+            </a>
+            <div class="news-body">
+              <time datetime="2025-11">November 2025</time>
+              <p>Gamerev Games is underway with a new action souls-like adventure: Krimson Kore!</p>
+              <a class="more" href="/krimson-kore/">Learn more</a>
+            </div>
+          </article>
 
-        <article class="news-card">
-          <a class="game-media" href="/blade-of-jinshu/" tabindex="-1" aria-hidden="true">
-            <img src="/images/blade_jinshu_title.jpg" alt="" loading="lazy" width="1280" height="720">
-          </a>
-          <div class="news-body">
-            <time datetime="2025-09-17">September 17, 2025</time>
-            <p>Blade of Jinshu is now available on Steam!</p>
-            <a class="more" href="https://store.steampowered.com/app/3590120/Blade_of_Jinshu/">View on Steam</a>
-          </div>
-        </article>
+          <article class="news-card">
+            <a class="game-media" href="/blade-of-jinshu/" tabindex="-1" aria-hidden="true">
+              <img src="/images/blade_jinshu_title.jpg" alt="" loading="lazy" width="1280" height="720">
+            </a>
+            <div class="news-body">
+              <time datetime="2025-09-17">September 17, 2025</time>
+              <p>Blade of Jinshu is now available on Steam!</p>
+              <a class="more" href="https://store.steampowered.com/app/3590120/Blade_of_Jinshu/">View on Steam</a>
+            </div>
+          </article>
 
+        </div>
+        <button class="carousel-btn prev" type="button" aria-label="Previous news">&#8249;</button>
+        <button class="carousel-btn next" type="button" aria-label="Next news">&#8250;</button>
       </div>
     </div>
   </section>
@@ -178,5 +194,34 @@
 </footer>
 
 <script src="/site.js" defer></script>
+
+<script>
+/* News carousel: the arrow buttons scroll the row; swiping and trackpads work on their own. */
+document.querySelectorAll("[data-carousel]").forEach(function (c) {
+  var track = c.querySelector(".carousel-track");
+  var prev = c.querySelector(".prev"), next = c.querySelector(".next");
+  function gap() { return parseFloat(getComputedStyle(track).columnGap) || 24; }
+  function cardStep() {
+    var card = track.querySelector(".news-card");
+    return card ? card.getBoundingClientRect().width + gap() : track.clientWidth;
+  }
+  function update() {
+    var max = track.scrollWidth - track.clientWidth - 2;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max;
+    c.classList.toggle("no-scroll", max <= 0);
+  }
+  function go(dir) {
+    var visible = Math.max(1, Math.round(track.clientWidth / cardStep()));
+    track.scrollBy({ left: dir * cardStep() * visible });
+  }
+  prev.addEventListener("click", function () { go(-1); });
+  next.addEventListener("click", function () { go(1); });
+  track.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+});
+</script>
+  
 </body>
 </html>
