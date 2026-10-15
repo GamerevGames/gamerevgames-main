@@ -670,6 +670,22 @@ footer p { margin: 0; }
   .apply-form { padding: 22px; }
 }
 
+/* ---------- CONTACT PAGE ---------- */
+/* Colored words a little larger than the rest, like the old site */
+.contact-page .page-head h1 em,
+.contact-page .s-title em { font-size: 1.15em; }
+
+/* Four link cards, two per row (email, YouTube, LinkedIn, portfolio) */
+.contact-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.contact-grid .contact-card { display: block; padding: 28px 24px; text-decoration: none; color: inherit; }
+.contact-grid .feature-icon { margin: 0 0 18px; }
+.contact-grid .feature-icon svg { width: 30px; height: 30px; }
+.contact-card p { overflow-wrap: anywhere; }
+
+@media (max-width: 560px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
 /* =====================================================================
    404 PAGE
    Paste at the very END of style.css in the gamerevgames-main repo.
