@@ -546,6 +546,12 @@ footer p { margin: 0; }
 .page-banner .s-title, .page-banner .s-copy { text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6); }
 .page-banner .s-copy { color: #c9ceda; }
 
+/* Taller header banner (Games page) */
+.page-head.tall { padding: 200px 0 150px; }
+@media (max-width: 700px) {
+  .page-head.tall { padding: 130px 0 100px; }
+}
+
 /* people who ask their device to reduce motion get the still poster instead of the video */
 @media (prefers-reduced-motion: reduce) { video.head-bg { display: none; } }
 
