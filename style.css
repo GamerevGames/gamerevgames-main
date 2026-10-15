@@ -425,7 +425,7 @@ dialog.lightbox p { margin: 10px 0 0; text-align: center; color: var(--muted); f
 .game-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
 .game-card:hover .game-media img, .news-card:hover .game-media img { transform: scale(1.05); }
 .status {
-  position: absolute; top: 12px; left: 12px;
+  position: absolute; top: 12px; right: 12px;
   font-size: 0.78rem; font-weight: 700;
   padding: 4px 12px; border-radius: 999px;
   background: rgba(15, 17, 23, 0.8); border: 1px solid var(--border);
