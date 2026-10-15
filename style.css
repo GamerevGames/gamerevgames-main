@@ -407,6 +407,13 @@ dialog.lightbox p { margin: 10px 0 0; text-align: center; color: var(--muted); f
 .s-title em { font-style: normal; color: var(--accent); }
 .s-copy { max-width: 720px; color: var(--muted); font-size: 1.1rem; margin: 0; }
 
+/* ---------- News cards DONT REMOVE THIS IS NEEDED ---------- */
+.news-body { padding: 18px 22px 22px; }
+.news-body time { color: var(--accent-hover); font-weight: 700; font-size: 0.9rem; }
+.news-body p { margin: 6px 0 12px; }
+.news-body a.more { color: var(--accent-hover); font-weight: 600; text-decoration: none; }
+.news-body a.more:hover { text-decoration: underline; }
+
 /* ---------- Game cards ---------- */
 .game-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .game-card, .news-card {
