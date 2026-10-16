@@ -730,6 +730,84 @@ footer p { margin: 0; }
   .carousel-btn { top: 78px; width: 40px; height: 40px; }
 }
 
+
+/* =====================================================================
+   GAME PAGE (released games)
+   ===================================================================== */
+
+/* ---------- Header ---------- */
+.game-hero { padding: 120px 0 100px; }
+.crumb {
+  display: inline-block; margin-bottom: 18px;
+  color: #c9ceda; text-decoration: none; font-size: 0.9rem; font-weight: 600;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
+  transition: color .15s;
+}
+.crumb:hover { color: var(--accent-hover); }
+.game-hero h1 { font-size: clamp(2.4rem, 7vw, 4.4rem); }
+
+.game-meta { list-style: none; display: flex; flex-wrap: wrap; gap: 18px 44px; margin: 26px 0 30px; padding: 0; }
+.game-meta > li { display: flex; flex-direction: column; gap: 6px; }
+.meta-label {
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent-hover);
+}
+.meta-value { font-weight: 600; color: var(--text); text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6); }
+.game-meta .tags { margin: 0; }
+.game-meta .tags li {
+  font-size: 0.85rem; padding: 3px 12px; color: var(--text);
+  background: rgba(15, 17, 23, 0.55); border-color: rgba(255, 255, 255, 0.28);
+}
+.btn.big { padding: 15px 32px; font-size: 1.05rem; }
+.s-cta .btn.big { padding: 16px 36px; font-size: 1.1rem; }
+
+/* ---------- Screenshot carousel ---------- */
+.gallery { position: relative; }
+.gallery-track {
+  display: flex; overflow-x: auto;
+  scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none;
+  border: 1px solid var(--border); border-radius: 16px; background: #0b0d12;
+}
+.gallery-track::-webkit-scrollbar { display: none; }
+.gallery-track figure.media { flex: 0 0 100%; margin: 0; scroll-snap-align: center; }
+.gallery-track figure.media img {
+  display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+  border: 0; border-radius: 0;
+}
+.gallery-btn {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+  width: 48px; height: 48px; border: 0; border-radius: 50%;
+  background: rgba(15, 17, 23, 0.75); color: var(--text);
+  font-size: 1.5rem; line-height: 1; cursor: pointer;
+  transition: background .15s, opacity .15s;
+}
+.gallery-btn:hover { background: var(--accent); }
+.gallery-btn:disabled { opacity: 0.25; cursor: default; background: rgba(15, 17, 23, 0.75); }
+.gallery-btn.prev { left: 14px; }
+.gallery-btn.next { right: 14px; }
+.gallery-count {
+  position: absolute; top: 14px; right: 14px; z-index: 3;
+  padding: 3px 12px; border-radius: 999px;
+  background: rgba(15, 17, 23, 0.75); color: var(--text); font-size: 0.85rem;
+}
+.gallery.single .gallery-btn, .gallery.single .gallery-count { display: none; }
+
+/* ---------- Game info (text over the picture) ---------- */
+.info-copy { max-width: 760px; }
+.info-copy .s-copy + .s-copy { margin-top: 18px; }
+.info-tagline {
+  margin: 30px 0 0;
+  font-size: clamp(1.3rem, 3.2vw, 1.9rem); font-weight: 800; line-height: 1.2;
+  text-transform: uppercase; color: var(--accent);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 700px) {
+  .game-hero { padding: 80px 0 64px; }
+  .game-meta { gap: 16px 28px; }
+  .gallery-btn { width: 40px; height: 40px; }
+}
+
 /* =====================================================================
    404 PAGE
    Paste at the very END of style.css in the gamerevgames-main repo.
