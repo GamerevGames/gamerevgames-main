@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Krimson Kore | Gamerev Games</title>
+<meta name="description" content="Krimson Kore is a third-person action souls-like in development by Gamerev Games, coming soon to PC and PS5. Join the Discord to follow along.">
+<meta name="theme-color" content="#0f1117">
+<link rel="canonical" href="https://www.gamerev.games/krimson-kore/">
+<link rel="icon" href="/images/logo.png">
+
+<meta property="og:title" content="Krimson Kore | Gamerev Games">
+<meta property="og:description" content="A third-person action souls-like set in a corrupted, ruined Earth. Coming soon to PC and PS5.">
+<meta property="og:image" content="https://www.gamerev.games/images/krimson_kore_title.png">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="/style.css">
+
+<!--
+  ====================================================================
+  IN-DEVELOPMENT GAME PAGE TEMPLATE  (this file is Krimson Kore, filled in)
+  ====================================================================
+  To make a page for another game that is still IN DEVELOPMENT:
+  1. Copy this whole folder, e.g.  krimson-kore/  ->  my-game/   (the folder name is the web address)
+  2. Search this file for "EDIT" and change each marked item:
+       title / description / canonical / og tags (top of file)
+       header: banner video or image, game name, platforms, genre tags, buttons
+       game info: paragraphs and the closing line
+       "keep you updated" section: Discord link
+  3. Put the pictures in /images (names are up to you, just match them below).
+  4. Add the game to the Games page (In development group) and the Home page cards.
+
+  WHEN THE GAME RELEASES: switch to the released-game template (blade-of-jinshu/index.html) so the
+  page gets a trailer, screenshots, and a Play Now button. Keep the same folder name so old links still work.
+
+  Pictures this page uses (replace with your own):
+    banner (behind header + game info)   krimson-kore-hero.mp4 + krimson-kore-hero-poster.jpg   (about 1920 x 1300)
+-->
+</head>
+
+<body>
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/images/logo.png" alt="" width="30" height="30">Gamerev Games</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/studio/">Studio</a></li>
+        <li><a href="/games/" aria-current="page">Games</a></li>
+        <li><a href="/media/">Media</a></li>
+        <li><a href="/jobs/">Jobs</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="content" class="game-page">
+
+  <!-- ============ BANNER: one big picture behind the header AND the game info ============ -->
+  <div class="page-banner">
+
+    <!-- EDIT: banner. A looping muted video works like a GIF but loads much faster.
+         To use a GIF or still image instead, replace this whole <video> with:
+         <img class="head-bg" src="/images/YOUR-FILE.gif" alt="">  -->
+    <video class="head-bg" autoplay loop muted playsinline preload="metadata"
+           poster="/images/krimson_kore_title.png" aria-hidden="true">
+      <source src="/images/krimson-kore-action-2.mp4" type="video/mp4">
+    </video>
+
+    <!-- ---------- header ---------- -->
+    <div class="page-head game-hero">
+      <div class="wrap">
+        <a class="crumb" href="/games/">&larr; All games</a>
+
+        <!-- EDIT: game name (the first word is the colored one) -->
+        <h1><em>Krimson</em> Kore</h1>
+
+        <ul class="game-meta">
+          <!-- EDIT: platforms -->
+          <li>
+            <span class="meta-label">Platforms</span>
+            <span class="meta-value">PC and PS5</span>
+          </li>
+          <!-- EDIT: release status (use a date once you have one, e.g. "Spring 2027") -->
+          <li>
+            <span class="meta-label">Release</span>
+            <span class="meta-value">Coming soon</span>
+          </li>
+          <!-- EDIT: genre tags (add or remove <li>s) -->
+          <li>
+            <span class="meta-label">Genre</span>
+            <ul class="tags"><li>Third Person</li><li>Action Souls-like</li></ul>
+          </li>
+        </ul>
+
+        <div class="btns">
+          <!-- EDIT: Discord invite link. Remove the Press Kit button if the game has no press kit page. -->
+          <a class="btn primary big" href="https://discord.gg/sBKzC5h8Ea">Join the Discord!</a>
+          <a class="btn ghost big" href="/krimson-kore-press-kit/">Press Kit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- game info ---------- -->
+    <section class="s-section" id="info">
+      <div class="wrap">
+        <h2 class="s-title">Game <em>info</em></h2>
+
+        <!-- EDIT: the game description. Add or remove <p class="s-copy"> paragraphs. -->
+        <div class="info-copy">
+          <p class="s-copy">
+            A third-person action souls-like set in a corrupted, ruined Earth. You are a surgically augmented
+            survivor, resisting a regime that treats human lives as raw material.
+          </p>
+          <p class="s-copy">
+            When your sister is taken for a next-generation experiment, you fight through mechanical beasts,
+            mutants, and engineered monsters to bring her home. Expect brutal combat, precise controls, and a
+            focused narrative set inside a megastructure built on failed experiments and eugenics.
+          </p>
+          <p class="info-tagline">Your path leads to the Purity Collective, and a choice between survival and sacrifice.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ WE'LL KEEP YOU UPDATED ============ -->
+  <section class="s-section stay-tuned" id="updates">
+    <div class="wrap">
+      <h2>We'll keep you <em>updated</em></h2>
+      <p class="stay-sub">with this game here.</p>
+      <p class="stay-loop">Stay in the loop!</p>
+      <div class="btns">
+        <a class="btn primary big" href="https://discord.gg/sBKzC5h8Ea">Join the Discord!</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="s-social">
+      <li><a href="https://store.steampowered.com/app/3590120/Blade_of_Jinshu/">Steam</a></li>
+      <li><a href="https://gamerev-games.itch.io/">itch.io</a></li>
+      <li><a href="https://www.youtube.com/@GamerevGames">YouTube</a></li>
+    </ul>
+    <p>&copy; <span id="year">2026</span> Gamerev Games. The Gamerev Games name and logo are being trademarked and copyrighted.</p>
+  </div>
+</footer>
+
+<script src="/site.js" defer></script>
+</body>
+</html>
