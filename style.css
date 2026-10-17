@@ -809,6 +809,39 @@ footer p { margin: 0; }
 }
 
 /* =====================================================================
+   GAME PAGE (in development): "we'll keep you updated" section
+   ===================================================================== */
+.stay-tuned {
+  text-align: center;
+  padding: 130px 0 140px;
+  background:
+    radial-gradient(900px 360px at 50% 0%, rgba(224, 51, 79, 0.2), transparent 70%),
+    var(--bg-alt);
+  border-top: 1px solid var(--border);
+}
+.stay-tuned h2 {
+  margin: 0 0 12px;
+  font-size: clamp(2.2rem, 7vw, 4.2rem); font-weight: 800; line-height: 1.05;
+  text-transform: uppercase; letter-spacing: 0.01em;
+}
+.stay-tuned h2 em { font-style: normal; color: var(--accent); }
+.stay-sub {
+  margin: 0 0 22px;
+  font-size: clamp(1.2rem, 3.2vw, 1.8rem); font-weight: 700;
+  text-transform: uppercase; color: var(--muted);
+}
+.stay-loop {
+  margin: 0 0 34px;
+  font-size: clamp(1.4rem, 4vw, 2.2rem); font-weight: 800;
+  text-transform: uppercase; color: var(--accent-hover);
+}
+.stay-tuned .btns { justify-content: center; }
+
+@media (max-width: 700px) {
+  .stay-tuned { padding: 84px 0 96px; }
+}
+
+/* =====================================================================
    404 PAGE
    Paste at the very END of style.css in the gamerevgames-main repo.
    ===================================================================== */
