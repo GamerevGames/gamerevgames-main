@@ -842,6 +842,58 @@ footer p { margin: 0; }
 }
 
 /* =====================================================================
+   MEDIA PAGE
+   ===================================================================== */
+
+/* Colored words a little larger, like the Contact page */
+.media-page .page-head h1 em,
+.media-page .s-title em { font-size: 1.15em; }
+
+.creators-note { margin: 34px 0 0; }
+
+/* ---------- Press kit cards ---------- */
+.press-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 28px; }
+.press-card {
+  display: block; overflow: hidden; color: inherit; text-decoration: none;
+  background: var(--panel); border: 1px solid var(--border); border-radius: 16px;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+.press-card:hover {
+  transform: translateY(-4px); border-color: var(--accent);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+}
+.press-card img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.press-body { padding: 22px 24px 24px; }
+.press-body h3 { margin: 0 0 6px; font-size: 1.3rem; }
+.press-body p { margin: 0 0 14px; color: var(--muted); }
+.press-link { color: var(--accent); font-weight: 700; }
+.press-card:hover .press-link { color: var(--accent-hover); }
+
+/* ---------- Trailers ---------- */
+.video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.video-grid .video-wrap { width: 100%; }
+.video-cap { margin: 10px 0 0; text-align: center; color: var(--muted); font-size: 0.9rem; }
+/* a lone trailer is centered instead of stuck on the left half */
+.video-grid:has(.video-item:only-child) { grid-template-columns: minmax(0, 760px); justify-content: center; }
+.video-wrap.latest { margin-top: 24px; }
+
+/* ---------- Screenshot grid ---------- */
+.shot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+.shot-grid figure.media { margin: 0; }
+.shot-grid figure.media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+
+@media (max-width: 900px) {
+  .shot-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .press-grid, .video-grid { grid-template-columns: 1fr; }
+  .video-grid:has(.video-item:only-child) { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .shot-grid { grid-template-columns: 1fr; }
+}
+
+/* =====================================================================
    404 PAGE
    Paste at the very END of style.css in the gamerevgames-main repo.
    ===================================================================== */
