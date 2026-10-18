@@ -862,7 +862,7 @@ footer p { margin: 0; }
   transform: translateY(-4px); border-color: var(--accent);
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
 }
-.press-card img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.press-card img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #0b0d12; }
 .press-body { padding: 22px 24px 24px; }
 .press-body h3 { margin: 0 0 6px; font-size: 1.3rem; }
 .press-body p { margin: 0 0 14px; color: var(--muted); }
